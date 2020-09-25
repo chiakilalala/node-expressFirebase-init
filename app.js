@@ -10,16 +10,16 @@ app.use(express.static('public'));
 
 var admin = require("firebase-admin");
 
-var serviceAccount = require("node-expressFirebase-init.json");
-
-var fireData = admin.database();
-console.log(fireData);
-
+var serviceAccount = require("./node-expressFirebase-init.json");
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://node-5b5b4.firebaseio.com"
 });
+
+var fireData = admin.database();
+console.log(fireData);
+
 
 
 // 增加 body 解析
